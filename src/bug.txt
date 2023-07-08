@@ -1,0 +1,1 @@
+using switch and routes deffrentaiite in different react-dom application 

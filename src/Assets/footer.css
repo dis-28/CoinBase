@@ -1,0 +1,9 @@
+.footerSection {
+    background-color: #52b69a;
+    color: white;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

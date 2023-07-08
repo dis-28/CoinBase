@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React from 'react'
+import { Route, Link, Routes } from 'react-router-dom';
+import { Navbar, Cryptocurrencies, CryptoDetails, Homepage, Footer } from './components';
 import './App.css';
+import { Container } from "@mui/material";
+import { green } from '@mui/material/colors';
 
-function App() {
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <div className='navBar'>
+        <Navbar />
+      </div>
+      <div className='main'>
+        <Container sx={{ background: green[200], height: '100vh' }}>
+          <div className='routes'>
+            <Routes>
+              <Route path='/' element={<Homepage />} />
+              <Route path='/Cryptocurrencies' element={<Cryptocurrencies />} />
+              <Route path='/Crypto/:coinId' element={<CryptoDetails />} />
+            </Routes>
+          </div>
+        </Container>
+      </div>
+
+      <div className='footer'>
+
+        <Footer />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
